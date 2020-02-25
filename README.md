@@ -1,3 +1,25 @@
+#### Updated to Version 2
+Total rewrite of the indesign script.
+
+#### Changelog
+Added more properties to base font. 
+```
+Hyphenation defaults off.
+KerningMethod default set to Optical.
+Ligatures default off.
+Added a base Space after of 1 em
+Base font set to Arial to help avoid font issues.
+Font sizes are based off BootStrap css sizes.
+Added a folder for Character Styles
+Added No Break to Character Styles
+Added a folder to Paragraph Styles to store the Masters
+Renamed folders to Parachute and Charachute
+Added a auto numbering system to new folders. No more naming errors.
+Renamed Masters from • H Master to $ h-master
+Added in h4, h5, h6
+```
+
+
 # Paracute
 Parachute - Paragraph style standard for Indesign
 #### Description
@@ -8,22 +30,28 @@ Parachute aims to create a standard in which any designer can edit and format a 
 #### Paragraph styles structure
 
 ```
-Font name (folder)
-- • Master font (replace font)
-- • H Master
-- • P Master
-- H1
-- H2
-- H3
-- P1
-- P2
+Parachute (folder or Parachute_#)
+- Para masters
+- - $ master
+- - $ h-master
+- - $ p-master
+- h1
+- h2
+- h3
+- h4
+- h5
+- h6
+- p
+- p2
 ```
 
 #### Character styles structure
 ```
+Charachute (Folder, will only create the one, not possible to have duplicates)
 - Bold
 - Italic
 - Superscript
+- No Break
 ```
 
 #### How to use the indd file
@@ -43,7 +71,7 @@ Font name (folder)
   - Goto your scripts panel, select the Parachute script
     - Goto load paragraph styles, select and load Parachute
 - Rename the folder to the font you want to use
-- Double click • Master font (replace font)
+- Double click $ master paragraph style (replace font)
   - Click on Basic Character Formats on the menu on the side
     - Change the font family
 
@@ -55,4 +83,4 @@ Font name (folder)
 - [ ] Further expand read me
 - [ ] Update the Indesign document with expamles
 - [ ] Update the Indesign document with a how to use
-- [ ] Update the default paragraph style with a safe font
+- [x] Update the default paragraph style with a safe font
