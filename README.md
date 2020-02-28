@@ -19,6 +19,10 @@ Renamed Masters from • H Master to $ h-master
 Added in h4, h5, h6
 ```
 
+```
+#### Note
+The Indesign file is still the old version. I'll bring this inline as soon as possible.
+```
 
 # Paracute
 Parachute - Paragraph style standard for Indesign
@@ -77,6 +81,7 @@ Charachute (Folder, will only create the one, not possible to have duplicates)
 
 #### Work in Progress
 - [x] Build a Indesign Script that creates all the base paragraph and character styles
+- [ ] Build a UI in Indesign which gives users the ability to choose what they add and what font. This will live along side the original script.
 - [ ] Build a Indesign Script that exports all the base paragraph styles to an CSS file
 
 #### Things to do
