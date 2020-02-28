@@ -1,3 +1,5 @@
+////// ****** Created by John Glennon ***** //////
+
 /////// ----------- update these values ----------- ///////
 var em = 16;
 var masterFont = "Arial";
