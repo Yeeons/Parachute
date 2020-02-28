@@ -1,6 +1,6 @@
 /////// ----------- update these values ----------- ///////
-var em = 16
-var masterFont = "Arial"
+var em = 16;
+var masterFont = "Arial";
 
 
 // Folder name
@@ -122,7 +122,7 @@ function createPGroup(){
                 return;
             } 
         }
-        paraGroups.add( { name: groupName } )
+        paraGroups.add( { name: groupName } );
         paraGroups[ paraGroups.item( groupNameReturn ).index ].paragraphStyleGroups.add( { name: "Para masters" } );
     }
 }
@@ -155,13 +155,12 @@ function createCGroup(){
     }
 }
 
-createCGroup()
-createPGroup()
+createCGroup();
+createPGroup();
 
-var currentCGroup = charGroups.item( characterGroupName ).characterStyles
+var currentCGroup = charGroups.item( characterGroupName ).characterStyles;
 var currentPGroup = paraGroups.item( groupNameReturn ).paragraphStyles;
-var currentsettingGroup = paraGroups.item( groupNameReturn ).paragraphStyleGroups[0].paragraphStyles
-
+var currentsettingGroup = paraGroups.item( groupNameReturn ).paragraphStyleGroups[0].paragraphStyles;
 
 //////////////// group end
 
@@ -187,6 +186,7 @@ function cStyleAdd( properties ){
 
 
 ////// ****** Add in para styles here ***** //////
+////// ****** Modifiy Below ***** //////
 ////// ****** Remove a line if not needed ***** //////
 pStyleAdd( masterBase, currentsettingGroup, "$ master", "nill" );
 pStyleAdd( hBase, currentsettingGroup, "$ h-master", "$ master" );
