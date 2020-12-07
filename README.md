@@ -24,7 +24,7 @@ Added in h4, h5, h6
 The Indesign file is still the old version. I'll bring this inline as soon as possible.
 ```
 
-# Paracute
+# Parachute
 Parachute - Paragraph style standard for Indesign
 #### Description
 Parachute is a paragraph style standard for indesign CC 2015+. It was created to help improve how designers use paragraph styles in indesign.
