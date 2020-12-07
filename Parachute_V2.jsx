@@ -167,18 +167,18 @@ var currentsettingGroup = paraGroups.item( groupNameReturn ).paragraphStyleGroup
 //////////////// group end
 
 
-function pStyleAdd( properties, folder, currentFolder, basedOnFolder ){
+function pStyleAdd( properties, folder, styleName, basedOnFolder ){
     folder.add( properties );
     if ( basedOnFolder != "nill") {
-        if ( currentFolder == "$ h-master" || currentFolder == "$ p-master" ){
-            paraStyle = currentsettingGroup.item( currentFolder );
+        if ( styleName == "$ h-master" || styleName == "$ p-master" ){
+            paraStyle = currentsettingGroup.item( styleName );
             paraStyle.basedOn = currentsettingGroup.item( basedOnFolder );
         } else {
-            paraStyle = currentPGroup.item( currentFolder );
+            paraStyle = currentPGroup.item( styleName );
             paraStyle.basedOn = currentsettingGroup.item( basedOnFolder );
         }
     } else {
-        paraStyle = currentsettingGroup.item( currentFolder );
+        paraStyle = currentsettingGroup.item( styleName );
     }
 }
 
@@ -190,19 +190,19 @@ function cStyleAdd( properties ){
 ////// ****** Add in para styles here ***** //////
 ////// ****** Modifiy Below ***** //////
 ////// ****** Remove a line if not needed ***** //////
-pStyleAdd( masterBase, currentsettingGroup, "$ master", "nill" );
-pStyleAdd( hBase, currentsettingGroup, "$ h-master", "$ master" );
-pStyleAdd( pBase, currentsettingGroup, "$ p-master", "$ master" );
+pStyleAdd( masterBase, currentsettingGroup, masterBase.name, "nill" );
+pStyleAdd( hBase, currentsettingGroup, hBase.name, masterBase.name );
+pStyleAdd( pBase, currentsettingGroup, pBase.name, masterBase.name );
 
-pStyleAdd( h1, currentPGroup, "h1", "$ h-master" );
-pStyleAdd( h2, currentPGroup, "h2", "$ h-master" );
-pStyleAdd( h3, currentPGroup, "h3", "$ h-master" );
-pStyleAdd( h4, currentPGroup, "h4", "$ h-master" );
-pStyleAdd( h5, currentPGroup, "h5", "$ h-master" );
-pStyleAdd( h6, currentPGroup, "h6", "$ h-master" );
+pStyleAdd( h1, currentPGroup, h1.name, hBase.name );
+pStyleAdd( h2, currentPGroup, h2.name, hBase.name );
+pStyleAdd( h3, currentPGroup, h3.name, hBase.name );
+pStyleAdd( h4, currentPGroup, h4.name, hBase.name );
+pStyleAdd( h5, currentPGroup, h5.name, hBase.name );
+pStyleAdd( h6, currentPGroup, h6.name, hBase.name );
 
-pStyleAdd( p, currentPGroup, "p", "$ p-master" );
-pStyleAdd( p2, currentPGroup, "p2", "$ p-master" );
+pStyleAdd( p, currentPGroup, p.name, pBase.name );
+pStyleAdd( p2, currentPGroup, p2.name, pBase.name );
 
 cStyleAdd( bold );
 cStyleAdd( italic );
