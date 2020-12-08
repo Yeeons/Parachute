@@ -167,42 +167,46 @@ var currentsettingGroup = paraGroups.item( groupNameReturn ).paragraphStyleGroup
 //////////////// group end
 
 
-function pStyleAdd( properties, folder, styleName, basedOnFolder ){
-    folder.add( properties );
+function pStyleAdd( properties, currentFolder, basedOnFolder ){
+    currentFolder.add( properties );
     if ( basedOnFolder != "nill") {
-        if ( styleName == "$ h-master" || styleName == "$ p-master" ){
-            paraStyle = currentsettingGroup.item( styleName );
+        if ( properties.name == "$ h-master" || properties.name == "$ p-master" ){
+            paraStyle = currentsettingGroup.item( properties.name );
             paraStyle.basedOn = currentsettingGroup.item( basedOnFolder );
         } else {
-            paraStyle = currentPGroup.item( styleName );
+            paraStyle = currentPGroup.item( properties.name );
             paraStyle.basedOn = currentsettingGroup.item( basedOnFolder );
         }
     } else {
-        paraStyle = currentsettingGroup.item( styleName );
+        paraStyle = currentsettingGroup.item( properties.name );
     }
 }
 
 function cStyleAdd( properties ){
-    currentCGroup.add( properties )
+    try {
+        currentCGroup.add( properties )
+    } catch( err ){
+        // currently does nothing. Will look at checking to see if forlder is there and creating a new one or skipping
+    }
 }
 
 
 ////// ****** Add in para styles here ***** //////
 ////// ****** Modifiy Below ***** //////
 ////// ****** Remove a line if not needed ***** //////
-pStyleAdd( masterBase, currentsettingGroup, masterBase.name, "nill" );
-pStyleAdd( hBase, currentsettingGroup, hBase.name, masterBase.name );
-pStyleAdd( pBase, currentsettingGroup, pBase.name, masterBase.name );
+pStyleAdd( masterBase, currentsettingGroup, "nill" );
+pStyleAdd( hBase, currentsettingGroup, masterBase.name );
+pStyleAdd( pBase, currentsettingGroup, masterBase.name );
 
-pStyleAdd( h1, currentPGroup, h1.name, hBase.name );
-pStyleAdd( h2, currentPGroup, h2.name, hBase.name );
-pStyleAdd( h3, currentPGroup, h3.name, hBase.name );
-pStyleAdd( h4, currentPGroup, h4.name, hBase.name );
-pStyleAdd( h5, currentPGroup, h5.name, hBase.name );
-pStyleAdd( h6, currentPGroup, h6.name, hBase.name );
+pStyleAdd( h1, currentPGroup, hBase.name );
+pStyleAdd( h2, currentPGroup, hBase.name );
+pStyleAdd( h3, currentPGroup, hBase.name );
+pStyleAdd( h4, currentPGroup, hBase.name );
+pStyleAdd( h5, currentPGroup, hBase.name );
+pStyleAdd( h6, currentPGroup, hBase.name );
 
-pStyleAdd( p, currentPGroup, p.name, pBase.name );
-pStyleAdd( p2, currentPGroup, p2.name, pBase.name );
+pStyleAdd( p, currentPGroup, pBase.name );
+pStyleAdd( p2, currentPGroup, pBase.name );
 
 cStyleAdd( bold );
 cStyleAdd( italic );
