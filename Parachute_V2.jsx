@@ -71,13 +71,13 @@ var h6 = {
 
 var p = {
     name:  "p",
-    appliedFont: "Arial",
+    appliedFont: masterFont,
     pointSize: em * 1,
 }
 
 var p2 = {
     name:  "p2",
-    appliedFont: "Arial",
+    appliedFont: masterFont,
     pointSize: em * 0.6875,
 }
 
